@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ROI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+    <h1>RETURN ON INVESTMENT CALCULATOR</h1>
+    <div class="container">
+    <br>
+    <h3>What Is Return on Investment (ROI)?</h3>
+    <br>
+    <p>Return on investment (ROI) is a performance measure used to evaluate the efficiency or profitability of an investment or compare the efficiency of a number of different investments. ROI tries to directly measure the amount of return on a particular investment, relative to the investment’s cost.</p>
+    <p>To calculate ROI, the benefit (or return) of an investment is divided by the cost of the investment. The result is expressed as a percentage or a ratio.</p>
+    <br>
+    <p>Formula : <br> ROI=  ( profit / costOfInvest ) * 100 <br> Monthly ROI =  ( (profit/costOfInvest) * 100) / time;</p>
+    </div>
+</div>
+<div class="container">
+<div class="shadow-none p-3 mb-5 bg-light rounded">
+    <form th:action="@{result}" th:object="${roi}" method="post">
+        <div class="mb-3">
+            <label for="CostOfInvest" class="col-sm-2 col-form-label">Cost of investment:</label>
+            <div class="col-sm-10">
+            <input type="number" id="costOfInvest" class="form-control" name="costOfInvest">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="Profit" class="col-sm-2 col-form-label">Profit:</label>
+            <div class="col-sm-10">
+            <input type="number" id="profit" class="form-control" name="profit">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="Time" class="col-sm-2 col-form-label">Number of Months:</label>
+            <div class="col-sm-10">
+            <input type="number" id="time" class="form-control" name="time">
+            </div>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary">PROCESS</button>
+        </div>
+    </form>
+        </div>
+</div>
+</body>
+</html>
